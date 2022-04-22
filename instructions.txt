@@ -1,0 +1,24 @@
+build: make
+build debug: make debug
+
+run: ./sj -p 1000 <arguments> <R> <S>
+
+arguments (!!! datasets R and S must be the last 2 arguments):
+	-p X: sets partitioning grid (1000 is ok)
+	-c: creates the Raster Intervals for the two datasets
+	-f: enables the intermediate filter that uses the RI
+	-q: enables the refinement at the end of the pipeline	
+
+datasets:
+<R> and <S> can be selected from the following groups using these specific keywords:
+	Original TIGER: T1, T2, T3
+	N.America TIGER: T1NA, T2NA, T3NA
+	Original OSM: O3, O5, O6
+	ContinentalJoined OSM: O5Continental, O6Continental
+	Continental OSm: <O5 or O6>_NorthAmerica, <O5 or O6>_SouthAmerica, <O5 or O6>_EurasiaAfrica, <O5 or O6>_Oceania
+
+WARNING: Performing a join between two sets from different groups is untested and may cause problems.
+
+EXAMPLE RUN:
+make
+./sj -p 1000 -c -f -q T1 T3
