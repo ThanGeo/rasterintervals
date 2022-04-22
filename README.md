@@ -9,8 +9,17 @@ This is an end-to-end implementation of a join operation between two polygon dat
 
 ## Data
 
-This implementation needs the data to be in a binary form using the following specific format:
-- Polygon Geometries: total polygon count (4 bytes), polygon0 ID (4 bytes), polygon0 vertex count (4 bytes), point0 X coordinate (8 bytes), point0 Y coordinate (8 bytes), point1 X coordinate (8 bytes) point1 Y coordinate (8 bytes), ... , polygon1 ID (4 bytes) etc...
+This implementation needs the geometry input data to be in a binary form using the following specific format:
+- total polygon count (4 bytes)
+- polygon0 ID (4 bytes)
+- polygon0 vertex count (4 bytes)
+- point0 X coordinate (8 bytes)
+- point0 Y coordinate (8 bytes)
+- point1 X coordinate (8 bytes)
+- point1 Y coordinate (8 bytes)
+- ... 
+- polygon1 ID (4 bytes)
+- etc...
 
 ## Structure
 
