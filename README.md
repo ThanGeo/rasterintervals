@@ -21,6 +21,21 @@ This implementation needs the geometry input data to be in a binary form using t
 - polygon1 ID (4 bytes)
 - etc...
 
+Each geometry data set is accompanied by a byte offset map that can be used for faster data retrieval from disk. This offset map pairs a polygon ID with a byte offset that is used through seekg() to "jump" to the exact spot in the file and read the requested polygon without having to iterate through the rest of the information. This offset map is a binary file on disk in the following format:
+- total polygon count (4 bytes)
+- polygon0 ID (4 bytes)
+- polygon0 byte offset (8 bytes)
+- polygon1 ID (4 bytes)
+- etc...
+
+The Raster Intervals are generated through code and stored in the rasterintervals/interval_data/ directory in binary form, using the following format:
+- total polygon count (4 bytes)
+- polygon0 ID (4 bytes)
+- polygon0 number of total coding bytes T (4 bytes)
+- polygon0 RI coding data (T bytes)
+- polygon1 ID (4 bytes)
+- etc...
+
 ## Structure
 
 ## Code
