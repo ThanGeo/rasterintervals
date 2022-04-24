@@ -1,0 +1,2 @@
+Store here the binary geometry files and their respective byte offset maps using the following format:
+'X_fixed_binary.dat' and 'X_offset_map.dat' where X is the argument used in the execution command for this specific dataset.
