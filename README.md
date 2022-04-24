@@ -50,7 +50,7 @@ To connect the elements of the pipeline with each other, we use a dedicated set 
 
 ### Raster Intervals, Intermediate Filter & Refinement
 
-All code related to the Raster Intervals paper is stored in the rasterintervals/ directory. The creation process can be found in the raster_intervals.h and rasterization.h files, while the code related to the filter and refinement in the join.h and join_geometry_refinement.h files. In the rasterization step, we need to compute the area of each cell covered by a target polygon. To do so, we use the MapBox earcut library: https://github.com/mapbox/earcut.hpp
+All code related to the Raster Intervals paper is stored in the rasterintervals/ directory. The creation process can be found in the raster_intervals.h and rasterization.h files, while the code related to the filter and refinement in the join.h and join_geometry_refinement.h files. In the rasterization step, we need to compute the area of each cell covered by a target polygon. To do so, we use the MapBox earcut library: https://github.com/mapbox/earcut.hpp. In the rasterintervals/containers.h file, the global variable '**HILBERT_n**' sets the order N of the Hilbert curve. As explained in the paper, it must be a power of 2 and our best tested value for 32-bit environments is 2^16 = 65536.  
 
 ### Main
 
