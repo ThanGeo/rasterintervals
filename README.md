@@ -67,11 +67,11 @@ To run the program, use the following format:
 ```
 
 arguments:
-- ```-p X```: sets partitioning grid (X=1000 is ok)
-- c: creates the Raster Intervals for the two datasets and saves them on disk
-- f: enables the intermediate filter that uses the RI in the pipeline
-- q: enables the refinement at the end of the pipeline	
+- ```-p X``` sets partitioning grid (X=1000 is ok)
+- ```-c``` creates the Raster Intervals for the two datasets and saves them on disk
+- ```-f``` enables the intermediate filter that uses the RI in the pipeline
+- ```-q``` enables the refinement at the end of the pipeline	
 
 If the Raster Intervals are already generated in the rasterintervals/interval_data/ directory, we can ommit the -c argument. If we wish to override the intermediate filter or the refinement step, we may do so by ommiting the -f or -q arguments respectively.
 
-The two datasets must always be the last 2 arguments. Since each dataset is accompanied by its offset map, to simplify the execution and avoid using too many arguments, we use codenames for the datasets. In rasterintervals/dataset_data.h, the file paths are generated automatically using the given arguments. This means that the binary geometry files and their byte offset maps must have specific names and be in the directory datafiles/. For simplification, if we pass arguments R and S, then the binary geometry files must be 'datafiles/R_fixed_binary.dat' and 'datafiles/S_fixed_binary.dat' and their maps 'datafiles/R_offset_map.dat' and 'datafiles/S_offset_map.dat' respectively.
+The two datasets ```<R>``` and ```<S>``` must always be the last 2 arguments. Since each dataset is accompanied by its offset map, to simplify the execution and avoid using too many arguments, we use codenames for the datasets. In rasterintervals/dataset_data.h, the file paths are generated automatically using the given arguments. This means that the binary geometry files and their byte offset maps must have specific names and be in the directory datafiles/. For simplification, if we pass arguments R and S, then the binary geometry files must be 'datafiles/R_fixed_binary.dat' and 'datafiles/S_fixed_binary.dat' and their maps 'datafiles/R_offset_map.dat' and 'datafiles/S_offset_map.dat' respectively.
