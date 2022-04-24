@@ -60,7 +60,7 @@ To create the executable, use the 'make' command in the main directory. The code
 
 ## Execution
 
-To run the program, use the following format: [./sj -p 1000 <arguments> <R> <S>] where <arguments>:
+To run the program, use the following format: ./sj -p 1000 <arguments> <R> <S> where <arguments>:
 - p X: sets partitioning grid (X=1000 is ok)
 - c: creates the Raster Intervals for the two datasets and saves them on disk
 - f: enables the intermediate filter that uses the RI in the pipeline
