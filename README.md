@@ -9,6 +9,8 @@ This is an end-to-end implementation of a join operation between two polygon dat
 
 ## Data
 
+** TODO: provide links to datasets (github limit 100MB) **
+
 This implementation needs the geometry input data to be in a binary form using the following specific format:
 - total polygon count (4 bytes)
 - polygon0 ID (4 bytes)
