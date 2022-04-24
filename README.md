@@ -63,9 +63,9 @@ To create the executable, use the 'make' command in the main directory. The code
 To run the program, use the following format: ./sj -p 1000 <arguments> <R> <S>
 
 where <arguments>:
-- -p X: sets partitioning grid (X=1000 is ok)
-- -c: creates the Raster Intervals for the two datasets and saves them on disk
-- -f: enables the intermediate filter that uses the RI in the pipeline
-- -q: enables the refinement at the end of the pipeline	
+- '-p X': sets partitioning grid (X=1000 is ok)
+- '-c': creates the Raster Intervals for the two datasets and saves them on disk
+- '-f': enables the intermediate filter that uses the RI in the pipeline
+- '-q': enables the refinement at the end of the pipeline	
 
 The two datasets <R> and <S> must always be the last 2 arguments. Since each dataset is accompanied by its offset map, to simplify the execution and avoid using too many arguments, we use codenames for the datasets. In file rasterintervals/dataset_data.h, the file paths are generated automatically using the arguments <R> and <S>. This means that the binary geometry files must have specific names and be in the directory datafiles/.
