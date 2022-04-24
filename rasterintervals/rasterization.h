@@ -91,7 +91,7 @@ void sort_by_polar_angle(vector<Point> &points) {
 */
 
 double computePolygonArea(vector<Point> &points){
-	//MAPBOX METHOD
+	//MAPBOX METHOD https://github.com/mapbox/earcut.hpp
 	// The number type to use for tessellation
 	using Coord = double;
 
