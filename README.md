@@ -40,7 +40,7 @@ The Raster Intervals are generated through code and stored in the rasterinterval
 
 ### MBR Filter
 
-Directoris algorithms/, containers/, grid/ and partitioning/ contain code related to the MBR Filter used and is of no dependance to the Raster Intervals, with the exception of the function Relation::load() in containers/relation.cpp that creates the MBRs from the polygon geometries. Also, when a candidate pair is identified by the MBR Filter, it is forwarded further down the pipeline with the forwardCandidatePair() method that is invoked in the algorithms/fs.h file and implemented in the pipeline.h file.
+Directories algorithms/, containers/, grid/ and partitioning/ contain code related to the MBR Filter used and is of no dependance to the Raster Intervals. The method Relation::load() in containers/relation.cpp creates the MBRs from the polygon geometries. Also, when a candidate pair is identified by the MBR Filter, it is forwarded further down the pipeline with the forwardCandidatePair() method that is invoked in the algorithms/fs.h file and implemented in the pipeline.h file.
 
 ### Pipeline
 
@@ -67,7 +67,7 @@ To run the program, use the following format:
 ```
 
 arguments:
-- p X: sets partitioning grid (X=1000 is ok)
+- ```-p X```: sets partitioning grid (X=1000 is ok)
 - c: creates the Raster Intervals for the two datasets and saves them on disk
 - f: enables the intermediate filter that uses the RI in the pipeline
 - q: enables the refinement at the end of the pipeline	
