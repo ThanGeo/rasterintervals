@@ -69,7 +69,7 @@ To run the program, use the following format:
 ```
 
 arguments:
-- ```-p X``` sets partitioning grid (X=1000 is ok)
+- ```-p X``` sets the partitioning grid for the MBR filter (X=1000 is ok)
 - ```-c``` creates the Raster Intervals for the two datasets and saves them on disk
 - ```-f``` enables the intermediate filter that uses the RI in the pipeline
 - ```-q``` enables the refinement at the end of the pipeline	
