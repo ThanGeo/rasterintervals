@@ -1,0 +1,5 @@
+../GitHubCode/datafiles/ filter=lfs diff=lfs merge=lfs -text
+../GitHubCode/datafiles/O5_Africa.dat filter=lfs diff=lfs merge=lfs -text
+../GitHubCode/datafiles/O6_Africa.dat filter=lfs diff=lfs merge=lfs -text
+datafiles/O5_Africa.dat filter=lfs diff=lfs merge=lfs -text
+datafiles/O6_Africa.dat filter=lfs diff=lfs merge=lfs -text
