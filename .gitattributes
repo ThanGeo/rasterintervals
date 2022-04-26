@@ -6,3 +6,5 @@ datafiles/O6_Africa.dat filter=lfs diff=lfs merge=lfs -text
 datafiles/*.dat filter=lfs diff=lfs merge=lfs -text
 datafiles/O5_Africa_fixed_binary.dat filter=lfs diff=lfs merge=lfs -text
 datafiles/O6_Africa_fixed_binary.dat filter=lfs diff=lfs merge=lfs -text
+datafiles/O5_Africa_offset_map.dat filter=lfs diff=lfs merge=lfs -text
+datafiles/O6_Africa_offset_map.dat filter=lfs diff=lfs merge=lfs -text
