@@ -68,6 +68,54 @@ void saveResultPair(uint &idA, uint &idB){
         fout.close();
 }
 
+void setUniversalCoordinates(ifstream &fin){
+        int totalPolygonCount, vertexCount;
+        double x,y;
+        double polxMin,polyMin,polxMax,polyMax;
+        uint recID;
+
+        //read total polygon count from binary geometry file
+        fin.read((char*) &totalPolygonCount, sizeof(int));
+
+        uint lineCounter = 0;
+        while(lineCounter < totalPolygonCount){
+                //---BUILD POLYGON---
+
+                //read pol id
+                fin.read((char*) &recID, sizeof(int));
+                Polygon pol(recID);
+
+                polxMin = numeric_limits<int>::max();
+                polyMin = numeric_limits<int>::max();
+                polxMax = -numeric_limits<int>::max();
+                polyMax = -numeric_limits<int>::max();
+
+                //read vertex count for polygon
+                fin.read((char*) &vertexCount, sizeof(int));            
+                pol.vertices.reserve(vertexCount);
+                //read #vertexCount points
+                for(int i=0; i<vertexCount; i++){
+                        //read x, y
+                        fin.read((char*) &x, sizeof(double));
+                        fin.read((char*) &y, sizeof(double));
+
+                        pol.vertices.emplace_back(x, y);
+
+                        polxMin = min(x, polxMin);
+                        polyMin = min(y, polyMin);
+                        polxMax = max(x, polxMax);
+                        polyMax = max(y, polyMax);
+                }
+                //set universal coordinates
+                universalMinX = min(universalMinX, polxMin);
+                universalMinY = min(universalMinY, polyMin);
+                universalMaxX = max(universalMaxX, polxMax);
+                universalMaxY = max(universalMaxY, polyMax);
+
+                lineCounter++;
+        }
+}
+
 /* initializes certain variables and files for the process */
 void initialize(string &arg1, string &arg2){
         argument1 = arg1;
@@ -82,6 +130,20 @@ void initialize(string &arg1, string &arg2){
         //  regarding the geometries, we need to keep the files open at all times
         finR.open(geometryFileNameR, fstream::in | ios_base::binary);
         finS.open(geometryFileNameS, fstream::in | ios_base::binary);
+
+        if(!finR || !finS){
+                cout << "Error opening one of the two files." << endl;
+                exit(-1);
+        }
+
+        //set universal coordinates
+        cout << "Setting universal min/max..." << endl;
+        setUniversalCoordinates(finR);
+        setUniversalCoordinates(finS);
+        cout << "Done: " << universalMinX << " " << universalMinY << "," << universalMaxX << " " << universalMaxY << endl;
+        //return to begining
+        finR.seekg(0, ios::beg);
+        finS.seekg(0, ios::beg);
 
         ofstream fout(result_filename, fstream::out | ios_base::binary);
         fout.close();

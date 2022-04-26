@@ -386,6 +386,7 @@ vector<Cell> rasterizePolygon(Polygon &mappedPol, string argument){
 	TempPolygon tempPol;
 	subpolygonsAfterX.reserve(kx - Xi);
 
+
 	//sweep the x axis getting pairs of vertical lines Xi & Xi+1
 	while(Xi1<kx){
 		//cout << Xi << " and " << Xi1 << "/" << kx << endl;

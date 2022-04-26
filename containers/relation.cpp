@@ -139,13 +139,6 @@ void Relation::load(string filename, double &universalMinX, double &universalMin
             maxYmbr = std::max(maxYmbr, y);
         }
         //cout << "loaded pol " << recID << " with mbr: " << minXmbr << " " << minYmbr << "," << maxXmbr << " " << maxYmbr << endl;
-
-        //universal coordinates
-        universalMinX = std::min(universalMinX, minXmbr);
-        universalMinY = std::min(universalMinY, minYmbr);
-        universalMaxX = std::max(universalMaxX, maxXmbr);
-        universalMaxY = std::max(universalMaxY, maxYmbr);
-
         this->emplace_back(recID, minXmbr, minYmbr, maxXmbr, maxYmbr);
     }
 

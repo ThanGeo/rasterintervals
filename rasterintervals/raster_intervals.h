@@ -221,6 +221,11 @@ void computeIntervals(string &argument){
 	string filename = getBinaryGeometryFilename(argument);
 	ifstream fin(filename, fstream::in | ios_base::binary);
 
+	if(!fin){
+		cout << "error opening " << filename << "." << endl;
+		exit(-1);
+	}
+
 	//output files where the interval data will be stored
 	string intervalFilename = getIntervalBinaryFilename(argument);
 	ofstream fout(intervalFilename, ios_base::out | ios_base::binary);
