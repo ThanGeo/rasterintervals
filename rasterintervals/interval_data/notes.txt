@@ -1,0 +1,1 @@
+the raster intervals will be stored in this directory
