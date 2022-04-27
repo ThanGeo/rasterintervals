@@ -55,7 +55,7 @@ In the main directory, main.cpp implements driver code for the MBR Filter. After
 
 ### Installation
 
-To create the executable, use the 'make' command in the main directory. The code has been tested exclusively in Ubuntu 20.04.1 using C++14, g++ 9.4.0 and the -O3 optimizer. OpenMP is used to speed up the geometry loading process when creating the MBRs. 
+To create the executable, use the 'make' command in the main directory. The code has been tested exclusively in Ubuntu 20.04.1 using C++14, g++ 9.4.0 and the -O3 optimizer. OpenMP is used to speed up the geometry loading process when creating the MBRs. For Mac, C++ is required with g++ 9 and XCode, or the -fopenmp flag may throw the ```clang: error: unsupported option '-fopenmp'``` error. 
 
 ### Execution
 
