@@ -3,7 +3,7 @@ ifeq ($(OS),Darwin)
         #CC      = /usr/local/opt/llvm/bin/clang++
         #CFLAGS  = -O3 -mavx -std=c++14 -w -march=native -I/usr/local/opt/llvm/include -fopenmp 
         #LDFLAGS = -L/usr/local/opt/llvm/lib
-		CC      = /usr/local/bin/g++-7
+	CC      = g++
         CFLAGS  = -O3 -mavx -std=c++14 -w -march=native -I/usr/local/opt/libomp/include -fopenmp
         LDFLAGS = -L/usr/local/opt/libomp/lib
 else
