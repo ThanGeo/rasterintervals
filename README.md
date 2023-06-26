@@ -1,5 +1,5 @@
 # Raster Intervals
-## Code for paper-id 140 "Raster Intervals"
+## Code for paper "Raster Intervals: An Approximation Technique for Polygon Intersection Joins"
 Github link: https://github.com/ThanGeo/rasterintervals
 
 
@@ -30,8 +30,8 @@ Each geometry data set is accompanied by a byte offset map that can be used for 
 The Raster Intervals (RI) approximations are generated through code and stored in the rasterintervals/interval_data/ directory in binary form, using the following format:
 - total polygon count (4 bytes)
 - polygon0 ID (4 bytes)
-- polygon0 number of total coding bytes *T* (4 bytes)
-- polygon0 RI coding data (*T* bytes)
+- polygon0 number of total coding bytes **T** (4 bytes)
+- polygon0 RI coding data (**T** bytes)
 - polygon1 ID (4 bytes)
 - etc...
 
